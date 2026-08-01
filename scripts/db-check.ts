@@ -1,12 +1,12 @@
-// Quick connection test — verifies MONGODB_URI can authenticate against Atlas
+// Quick connection test — verifies DATABASE_URL can authenticate against Atlas
 // without touching any data. Run with: npm run db:check
 
 import mongoose from "mongoose";
 
 async function check() {
-  const uri = process.env.MONGODB_URI;
+  const uri = process.env.DATABASE_URL;
   if (!uri) {
-    console.error("✗ MONGODB_URI is not set. Add it to .env.local.");
+    console.error("✗ DATABASE_URL is not set. Add it to .env.local.");
     process.exit(1);
   }
 
@@ -27,7 +27,7 @@ async function check() {
     if (/bad auth|Authentication failed/i.test(msg)) {
       console.error(
         "\n  → Wrong username/password. Reset the DB user's password in\n" +
-          "    Atlas → Database Access, then update MONGODB_URI in .env AND .env.local."
+          "    Atlas → Database Access, then update DATABASE_URL in .env AND .env.local."
       );
     } else if (/timed out|ETIMEDOUT|querySrv|ENOTFOUND/i.test(msg)) {
       console.error(

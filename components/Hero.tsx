@@ -8,16 +8,17 @@ export default function Hero() {
         <div>
           <div className="flex items-center gap-3 mb-5">
             <span className="w-8 h-px bg-gold" />
-            <span className="eyebrow">Welcome Home</span>
+            <span className="eyebrow">Oasis of Hope · Kiwanja, Nairobi</span>
           </div>
           <h1 className="text-[clamp(2.2rem,4vw,3.5rem)] leading-[1.05] mb-5">
-            A place to <em className="not-italic font-medium text-gold">believe</em>,
+            Seeking to make <em className="not-italic font-medium text-gold">Christ</em>
             <br />
-            belong, and grow.
+            known.
           </h1>
           <p className="text-[1.1rem] text-ink-soft max-w-[46ch] mb-8">
-            Nahum Christian Church International is a family of believers in the heart of the
-            city, gathering to worship, grow in faith, and serve our community together.
+            PEFA Branch Kiwanja Cathedral is a family of believers in Kahawa West, Nairobi —
+            an Oasis of Hope gathering to worship, grow in the Word, and serve our community
+            together.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <Link href="/about" className="btn btn-primary">
@@ -36,13 +37,13 @@ export default function Hero() {
           <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[300px] lg:max-w-[460px] h-auto">
             <defs>
               <radialGradient id="glow" cx="50%" cy="38%" r="60%">
-                <stop offset="0%" stopColor="#E3C077" stopOpacity="0.55" />
-                <stop offset="60%" stopColor="#B8923F" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#6E1423" stopOpacity="0" />
+                <stop offset="0%" stopColor="#E4C874" stopOpacity="0.55" />
+                <stop offset="60%" stopColor="#C9A44A" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#3B1B72" stopOpacity="0" />
               </radialGradient>
               <linearGradient id="archfill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#6E1423" />
-                <stop offset="100%" stopColor="#430B15" />
+                <stop offset="0%" stopColor="#3B1B72" />
+                <stop offset="100%" stopColor="#2C1457" />
               </linearGradient>
               <clipPath id="archclip">
                 <path d="M200 6C110 6 40 76 40 166V462H360V166C360 76 290 6 200 6Z" />

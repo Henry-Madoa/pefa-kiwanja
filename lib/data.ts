@@ -3,17 +3,19 @@
 // (see README.md "Connecting a real backend").
 
 export const churchInfo = {
-  name: "Nahum Christian Church International",
-  shortName: "NCCI",
+  name: "PEFA Branch Kiwanja Cathedral",
+  shortName: "PBKC",
+  tagline: "Seeking to make Christ known.",
+  ministryName: "Oasis of Hope",
   serviceTimes: "Sun 8:00 & 10:30 AM",
-  address: "14 Cathedral Road, Nairobi",
+  address: "Kiwanja, Kahawa West, Nairobi, Kenya",
   phone: "+254 700 123 456",
-  email: "hello@ncci.church",
-  officeHours: "Mon–Fri, 9:00 AM – 5:00 PM",
+  email: "oasisofhope.pefachurchkiwanja@gmail.com",
+  officeHours: "Always open",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63740.6!2d36.8!3d-1.283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1!2sNairobi!5e0!3m2!1sen!2ske",
   socials: {
-    facebook: "#",
+    facebook: "https://www.facebook.com/PBKCtv",
     instagram: "#",
     youtube: "#",
   },
@@ -27,16 +29,15 @@ export const stats = [
 ];
 
 export const missionStatement = {
-  quote:
-    "To make disciples of Christ, build a Spirit-filled family, and carry hope into every corner of our community.",
-  cite: "NCCI Mission Statement",
+  quote: "Seeking to make Christ known.",
+  cite: "PEFA Branch Kiwanja Cathedral",
 };
 
 export const aboutContent = {
   history:
-    "Founded in 1999 by a small group of families meeting in a living room, Nahum Christian Church International has grown into a citywide congregation of thousands, while holding onto the same conviction that brought it to life: that ordinary people, filled with the Spirit, can carry extraordinary hope into their city.",
+    "PEFA Branch Kiwanja Cathedral is a family of believers in Kiwanja, Kahawa West, Nairobi — part of the Pentecostal Evangelistic Fellowship of Africa (PEFA). Known to our community as the \"Oasis of Hope,\" we gather to worship, to grow through the Word, and to serve, holding to one simple conviction: that ordinary people, filled with the Spirit, can carry the hope of Christ into their city.",
   vision:
-    "A Spirit-filled church in every neighborhood, raising disciples who carry the hope of Christ into their homes, workplaces, and communities.",
+    "An Oasis of Hope in Kahawa West and beyond — raising disciples who carry the hope of Christ into their homes, workplaces, and communities.",
   mission:
     "To make disciples of Christ, build a Spirit-filled family, and carry hope into every corner of our community.",
   coreValues: [

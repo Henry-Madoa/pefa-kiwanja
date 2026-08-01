@@ -1,6 +1,6 @@
 // Seeds MongoDB with the sample content from lib/data.ts and creates the first
 // admin user. Run with: npm run seed
-// Requires MONGODB_URI, ADMIN_EMAIL, ADMIN_PASSWORD (and optionally ADMIN_NAME)
+// Requires DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD (and optionally ADMIN_NAME)
 // in .env.local.
 
 import mongoose from "mongoose";
@@ -14,17 +14,17 @@ import LeaderModel from "../models/Leader";
 import MinistryModel from "../models/Ministry";
 
 async function seed() {
-  const { MONGODB_URI, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME } = process.env;
+  const { DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME } = process.env;
 
-  if (!MONGODB_URI) {
-    throw new Error("MONGODB_URI is not set. Add it to .env.local first.");
+  if (!DATABASE_URL) {
+    throw new Error("DATABASE_URL is not set. Add it to .env.local first.");
   }
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
     throw new Error("ADMIN_EMAIL and ADMIN_PASSWORD must be set in .env.local first.");
   }
 
   console.log("Connecting to MongoDB...");
-  await mongoose.connect(MONGODB_URI);
+  await mongoose.connect(DATABASE_URL);
 
   console.log("Seeding admin user...");
   const passwordHash = await bcrypt.hash(ADMIN_PASSWORD, 10);

@@ -17,7 +17,7 @@ Then create your environment file (see [`.env.local.example`](.env.local.example
 cp .env.local.example .env.local
 ```
 
-Fill in `MONGODB_URI` (MongoDB Atlas or a local `mongod`), a `NEXTAUTH_SECRET`
+Fill in `DATABASE_URL` (MongoDB Atlas or a local `mongod`), a `NEXTAUTH_SECRET`
 (`openssl rand -base64 32`), and the `ADMIN_EMAIL` / `ADMIN_PASSWORD` used to
 create your first admin login. Then seed the database and start the app:
 

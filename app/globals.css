@@ -12,8 +12,8 @@
   --c-surface-2: 239 230 210; /* secondary surface (cream-dim) */
   --c-text: 42 33 28; /* ink */
   --c-text-soft: 85 72 61; /* ink-soft */
-  --c-heading: 67 11 21; /* wine-dark */
-  --line: rgba(184, 146, 63, 0.35);
+  --c-heading: 44 20 87; /* purple-dark */
+  --line: rgba(201, 164, 74, 0.35);
 }
 
 :root[data-theme="dark"] {
@@ -22,8 +22,8 @@
   --c-surface-2: 46 38 31;
   --c-text: 237 229 214;
   --c-text-soft: 179 166 147;
-  --c-heading: 227 192 119; /* gold-bright */
-  --line: rgba(184, 146, 63, 0.22);
+  --c-heading: 228 200 116; /* gold-bright */
+  --line: rgba(201, 164, 74, 0.22);
 }
 
 html {
@@ -72,7 +72,7 @@ body {
     box-shadow: none;
   }
   .arch-card:hover {
-    box-shadow: 0 20px 40px -20px rgba(110, 20, 35, 0.25);
+    box-shadow: 0 20px 40px -20px rgba(59, 27, 114, 0.28);
   }
 
   .arch-icon {

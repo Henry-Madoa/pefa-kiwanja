@@ -140,7 +140,7 @@ export default async function AdminDashboardPage() {
           <p className="font-semibold mb-1">Database not connected</p>
           <p>{dbError}</p>
           <p className="mt-2 text-ink-soft">
-            Set <code className="bg-white/50 px-1 rounded">MONGODB_URI</code> in{" "}
+            Set <code className="bg-white/50 px-1 rounded">DATABASE_URL</code> in{" "}
             <code className="bg-white/50 px-1 rounded">.env.local</code> to a running MongoDB
             instance, then run <code className="bg-white/50 px-1 rounded">npm run seed</code>.
           </p>

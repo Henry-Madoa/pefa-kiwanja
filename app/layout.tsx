@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "Nahum Christian Church International",
+  title: "PEFA Branch Kiwanja Cathedral — Oasis of Hope",
   description:
-    "Nahum Christian Church International is a family of believers in the heart of the city, gathering to worship, grow in faith, and serve our community together.",
+    "PEFA Branch Kiwanja Cathedral is a family of believers in Kiwanja, Kahawa West, Nairobi — an Oasis of Hope seeking to make Christ known through worship, the Word, and service.",
 };
 
 export default function RootLayout({

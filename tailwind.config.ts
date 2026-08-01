@@ -12,15 +12,24 @@ const config: Config = {
         // Surface tokens flip between light/dark via CSS variables.
         white: "rgb(var(--c-surface) / <alpha-value>)", // cards
         page: "rgb(var(--c-bg) / <alpha-value>)", // page/nav surface
-        // Brand colors stay constant across themes.
+        // Brand colors stay constant across themes. Derived from the
+        // PEFA Branch Kiwanja Cathedral logo: royal purple + antique gold.
+        // `purple` is the canonical name; `wine` is kept as an alias so the
+        // existing utility classes across the site re-theme in one place.
+        purple: {
+          DEFAULT: "#3B1B72", // logo background (exact)
+          dark: "#2C1457",
+          deeper: "#1D0E3B",
+        },
         wine: {
-          DEFAULT: "#6E1423",
-          dark: "#430B15",
-          deeper: "#2E070E",
+          DEFAULT: "#3B1B72",
+          dark: "#2C1457",
+          deeper: "#1D0E3B",
         },
         gold: {
-          DEFAULT: "#B8923F",
-          bright: "#E3C077",
+          DEFAULT: "#C9A44A",
+          bright: "#E4C874",
+          soft: "#D8B878", // the logo's champagne-gold line work
         },
         cream: {
           DEFAULT: "#F7F1E3", // constant: light text on dark bands

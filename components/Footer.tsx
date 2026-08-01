@@ -11,8 +11,8 @@ export default function Footer() {
               {churchInfo.name}
             </div>
             <p className="text-[0.86rem] mt-3.5 max-w-[34ch] text-cream/60">
-              A family of believers gathering to worship, grow, and serve our community with
-              hope.
+              An Oasis of Hope in Kiwanja, Kahawa West — seeking to make Christ known through
+              worship, the Word, and service.
             </p>
           </div>
           <div>
