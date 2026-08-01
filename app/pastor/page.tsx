@@ -4,14 +4,14 @@ import { pastor } from "@/lib/data";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Pastor's Profile | NCCI",
-  description: "Meet our Senior Pastor.",
+  title: "Bishop's Profile | PEFA Branch Kiwanja Cathedral",
+  description: "Meet the presiding bishop of PEFA Branch Kiwanja Cathedral.",
 };
 
 export default function PastorPage() {
   return (
     <>
-      <PageHero eyebrow="Meet Our Shepherd" title="Pastor's Profile" image={pageImages.pastor} />
+      <PageHero eyebrow="Meet Our Shepherd" title="Bishop's Profile" image={pageImages.pastor} />
       <section className="section">
         <div className="container-page grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12">
           <div>
@@ -34,17 +34,17 @@ export default function PastorPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
               <div>
-                <h3 className="text-[1rem] mb-1.5">Education</h3>
+                <h3 className="text-[1rem] mb-1.5">Ordination</h3>
                 <p className="text-ink-soft text-[0.94rem]">{pastor.education}</p>
               </div>
               <div>
-                <h3 className="text-[1rem] mb-1.5">Ministry Experience</h3>
+                <h3 className="text-[1rem] mb-1.5">Ministry &amp; Oversight</h3>
                 <p className="text-ink-soft text-[0.94rem]">{pastor.ministryExperience}</p>
               </div>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-[1rem] mb-1.5">Personal Testimony</h3>
+              <h3 className="text-[1rem] mb-1.5">Ministry &amp; Impact</h3>
               <p className="text-ink-soft text-[0.94rem] leading-relaxed">{pastor.testimony}</p>
             </div>
 

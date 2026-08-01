@@ -62,10 +62,10 @@ export default async function Marquee() {
     <section className="relative bg-wine-deeper py-16 md:py-20 overflow-hidden">
       <div className="container-page relative z-10">
         <div className="section-head mb-10">
-          <span className="eyebrow block mb-3">Life at NCCI</span>
-          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] text-cream">Moments From Our Family</h2>
+          <span className="eyebrow block mb-3">Where Faith Meets Purpose</span>
+          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] text-cream">Moments From Our Cathedral</h2>
           <p className="text-cream/60 mt-3.5 font-serif">
-            Worship, fellowship, and service — a glimpse of what God is doing among us.
+            Worship, the Word, and celebration — scenes from PEFA Kiwanja TV broadcasts of our services.
           </p>
         </div>
       </div>

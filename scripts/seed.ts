@@ -5,13 +5,14 @@
 
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import { sermons, events, blogPosts, leadership, ministries } from "../lib/data";
+import { sermons, events, blogPosts, leadership, ministries, galleryImages } from "../lib/data";
 import AdminUserModel from "../models/AdminUser";
 import SermonModel from "../models/Sermon";
 import EventModel from "../models/Event";
 import BlogPostModel from "../models/BlogPost";
 import LeaderModel from "../models/Leader";
 import MinistryModel from "../models/Ministry";
+import GalleryImageModel from "../models/GalleryImage";
 
 async function seed() {
   const { DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME } = process.env;
@@ -67,6 +68,10 @@ async function seed() {
   await MinistryModel.deleteMany({});
   await MinistryModel.insertMany(ministries.map((m, i) => ({ ...m, order: i })));
 
+  console.log("Seeding gallery (marquee) images...");
+  await GalleryImageModel.deleteMany({});
+  await GalleryImageModel.insertMany(galleryImages);
+
   console.log("\nDone.");
   console.log(`  Admin login: ${ADMIN_EMAIL}`);
   console.log(`  Sermons: ${sermons.length}`);
@@ -74,6 +79,7 @@ async function seed() {
   console.log(`  Blog posts: ${blogPosts.length}`);
   console.log(`  Leaders: ${leadership.length}`);
   console.log(`  Ministries: ${ministries.length}`);
+  console.log(`  Gallery images: ${galleryImages.length}`);
 
   await mongoose.disconnect();
 }

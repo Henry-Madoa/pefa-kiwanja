@@ -6,15 +6,15 @@ const SermonSchema = new Schema(
     title: { type: String, required: true },
     speaker: { type: String, required: true },
     date: { type: String, required: true },
-    scripture: { type: String, required: true },
+    scripture: { type: String, default: "" },
     category: {
       type: String,
       enum: ["Sunday Service", "Midweek Service", "Conference", "Special Event"],
       required: true,
     },
     description: { type: String, required: true },
-    youtubeId: { type: String, required: true },
-    duration: { type: String, required: true },
+    youtubeId: { type: String, default: "" },
+    duration: { type: String, default: "" },
   },
   { timestamps: true }
 );

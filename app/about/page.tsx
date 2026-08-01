@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import { aboutContent } from "@/lib/data";
+import { aboutContent, churchInfo } from "@/lib/data";
 import { pageImages } from "@/lib/images";
 import { dbConnect } from "@/lib/mongodb";
 import { serialize } from "@/lib/serialize";
@@ -19,8 +19,9 @@ async function getBoardMembers() {
 }
 
 export const metadata: Metadata = {
-  title: "About Us | NCCI",
-  description: "Learn about the history, vision, mission, and values of Nahum Christian Church International.",
+  title: "About Us | PEFA Branch Kiwanja Cathedral",
+  description:
+    "Learn about the history, vision, mission, and values of PEFA Branch Kiwanja Cathedral — an Oasis of Hope in Kahawa West, Nairobi, and a branch of the Pentecostal Evangelistic Fellowship of Africa.",
 };
 
 export default async function AboutPage() {
@@ -40,6 +41,12 @@ export default async function AboutPage() {
           <div>
             <span className="eyebrow block mb-3">Our History</span>
             <h2 className="text-[1.7rem] mb-4">Where We Come From</h2>
+            <blockquote className="border-l-2 border-gold/50 pl-4 mb-5 font-display italic text-ink leading-relaxed">
+              &ldquo;{churchInfo.welcomeVerse.text}&rdquo;
+              <cite className="not-italic block mt-2 font-sans text-[0.75rem] font-semibold tracking-[0.06em] text-gold">
+                &mdash; {churchInfo.welcomeVerse.ref}
+              </cite>
+            </blockquote>
             <p className="text-ink-soft leading-relaxed">{aboutContent.history}</p>
           </div>
           <div className="grid grid-cols-1 gap-8">
@@ -50,6 +57,38 @@ export default async function AboutPage() {
             <div>
               <span className="eyebrow block mb-2">Mission</span>
               <p className="text-ink-soft leading-relaxed">{aboutContent.mission}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container-page">
+          <div className="rounded-2xl bg-wine text-cream px-8 py-12 md:px-14 md:py-14 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+            <div className="flex flex-col items-center gap-3 text-center">
+              <span className="w-24 h-24 rounded-full bg-cream flex items-center justify-center shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/pefa-logo.png"
+                  alt="Pentecostal Evangelistic Fellowship of Africa logo"
+                  width={72}
+                  height={72}
+                  className="w-[72px] h-[72px] object-contain"
+                />
+              </span>
+              <span className="font-sans text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-gold-bright">
+                {churchInfo.denominationShort}
+              </span>
+            </div>
+            <div>
+              <span className="eyebrow block mb-3 text-gold-bright">Part of a Wider Family</span>
+              <p className="text-cream/85 leading-relaxed text-[1.02rem]">{aboutContent.affiliation}</p>
+              <blockquote className="mt-6 border-l-2 border-gold-bright/60 pl-4 font-display italic text-cream/90">
+                &ldquo;{churchInfo.denominationVerse.text}&rdquo;
+                <cite className="not-italic block mt-2 font-sans text-[0.78rem] font-semibold tracking-[0.06em] text-gold-bright">
+                  &mdash; {churchInfo.denominationVerse.ref}
+                </cite>
+              </blockquote>
             </div>
           </div>
         </div>

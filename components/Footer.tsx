@@ -14,6 +14,21 @@ export default function Footer() {
               An Oasis of Hope in Kiwanja, Kahawa West — seeking to make Christ known through
               worship, the Word, and service.
             </p>
+            <div className="flex items-center gap-3 mt-5">
+              <span className="w-11 h-11 rounded-full bg-cream flex items-center justify-center shrink-0">
+                <img
+                  src="/pefa-logo.png"
+                  alt="Pentecostal Evangelistic Fellowship of Africa logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                />
+              </span>
+              <span className="text-[0.72rem] leading-snug text-cream/55 max-w-[24ch]">
+                A branch of the{" "}
+                <span className="text-gold-bright/90">{churchInfo.denomination}</span>
+              </span>
+            </div>
           </div>
           <div>
             <h4 className="font-sans text-[0.76rem] font-semibold tracking-[0.1em] uppercase text-gold-bright mb-4">
