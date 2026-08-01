@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens as RGB channels so Tailwind's /opacity modifiers keep working.
+   Light is the default; [data-theme="dark"] on <html> swaps the surfaces and
+   text. Brand colors (wine, gold, forest, cream) stay constant — they're used
+   as light text on the dark accent bands, which are dark in both themes. */
+:root {
+  --c-bg: 247 241 227; /* page background (cream) */
+  --c-surface: 255 255 255; /* cards (was bg-white) */
+  --c-surface-2: 239 230 210; /* secondary surface (cream-dim) */
+  --c-text: 42 33 28; /* ink */
+  --c-text-soft: 85 72 61; /* ink-soft */
+  --c-heading: 67 11 21; /* wine-dark */
+  --line: rgba(184, 146, 63, 0.35);
+}
+
+:root[data-theme="dark"] {
+  --c-bg: 24 20 17;
+  --c-surface: 35 29 24;
+  --c-surface-2: 46 38 31;
+  --c-text: 237 229 214;
+  --c-text-soft: 179 166 147;
+  --c-heading: 227 192 119; /* gold-bright */
+  --line: rgba(184, 146, 63, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--c-bg));
+  color: rgb(var(--c-text));
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-fraunces), serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: rgb(var(--c-heading));
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-[1180px] mx-auto px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-gold;
+  }
+
+  .btn {
+    @apply font-sans text-[0.88rem] font-semibold px-6 py-3.5 rounded-[3px] inline-flex items-center gap-2 transition-all border border-transparent;
+  }
+  .btn-primary {
+    @apply bg-wine text-cream hover:bg-wine-dark hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply border-wine text-wine hover:bg-wine hover:text-cream;
+  }
+  .btn-ghost {
+    @apply text-ink-soft hover:text-wine;
+  }
+
+  .arch-card {
+    @apply bg-white border border-[color:var(--line)] rounded-arch px-6 pt-10 pb-8 text-center transition-all hover:-translate-y-1.5;
+    box-shadow: none;
+  }
+  .arch-card:hover {
+    box-shadow: 0 20px 40px -20px rgba(110, 20, 35, 0.25);
+  }
+
+  .arch-icon {
+    @apply w-16 h-16 mx-auto mb-5 flex items-center justify-center border border-[color:var(--line)] bg-cream-dim;
+    border-radius: 50% 50% 4px 4px;
+  }
+
+  .section-head {
+    @apply text-center max-w-[620px] mx-auto mb-14;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-left {
+  animation: marquee-left 55s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 55s linear infinite;
+}
+
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left,
+  .marquee-right {
+    animation: none;
+  }
+}
