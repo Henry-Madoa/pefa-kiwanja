@@ -152,3 +152,55 @@ export function formatDate(iso: string) {
     year: "numeric",
   });
 }
+
+// ── Content shapes ───────────────────────────────────────────────────────────
+// The content itself now lives in MongoDB and is managed through the admin
+// portal; these types describe the documents the pages read back, so views stay
+// type-safe without hardcoding any content here.
+
+export type Sermon = {
+  slug: string;
+  title: string;
+  speaker: string;
+  date: string;
+  scripture: string;
+  category: "Sunday Service" | "Midweek Service" | "Conference" | "Special Event";
+  description: string;
+  youtubeId: string;
+  duration: string;
+};
+
+export type ChurchEvent = {
+  slug: string;
+  title: string;
+  description: string;
+  venue: string;
+  date: string;
+  time: string;
+  organizer: string;
+  category: string;
+  capacity: number;
+  registered: number;
+};
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  category: "News" | "Devotional" | "Testimony" | "Mission Update" | "Pastor's Message";
+  author: string;
+  date: string;
+  excerpt: string;
+  content: string;
+  coverImage?: string;
+  tags: string[];
+};
+
+export type Ministry = {
+  slug: string;
+  name: string;
+  description: string;
+  leader: string;
+  contact: string;
+  schedule: string;
+  upcoming: string[];
+};

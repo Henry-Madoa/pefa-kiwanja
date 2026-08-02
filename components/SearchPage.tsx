@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ministries, type Sermon, type ChurchEvent, type BlogPost } from "@/lib/data";
+import { type Sermon, type ChurchEvent, type BlogPost, type Ministry } from "@/lib/data";
 
 type Leader = { name: string; position: string };
 
@@ -11,11 +11,13 @@ export default function SearchPage({
   events,
   blogPosts,
   leaders,
+  ministries = [],
 }: {
   sermons: Sermon[];
   events: ChurchEvent[];
   blogPosts: BlogPost[];
   leaders: Leader[];
+  ministries?: Ministry[];
 }) {
   const [query, setQuery] = useState("");
 
@@ -52,7 +54,7 @@ export default function SearchPage({
     });
 
     return items;
-  }, [query, sermons, events, blogPosts, leaders]);
+  }, [query, sermons, events, blogPosts, leaders, ministries]);
 
   return (
     <div>

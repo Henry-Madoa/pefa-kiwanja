@@ -1,18 +1,15 @@
-// Seeds MongoDB with the sample content from lib/data.ts and creates the first
-// admin user. Run with: npm run seed
+// Creates (or updates) the first admin user. Run with: npm run seed
 // Requires DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD (and optionally ADMIN_NAME)
 // in .env.local.
+//
+// Site content (sermons, events, blog posts, leadership, ministries, gallery)
+// now lives in MongoDB and is managed through the admin portal, so it is no
+// longer seeded from source. This script is deliberately non-destructive: it
+// only upserts the admin account and never deletes content.
 
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
-import { sermons, events, blogPosts, leadership, ministries, galleryImages } from "../lib/data";
 import AdminUserModel from "../models/AdminUser";
-import SermonModel from "../models/Sermon";
-import EventModel from "../models/Event";
-import BlogPostModel from "../models/BlogPost";
-import LeaderModel from "../models/Leader";
-import MinistryModel from "../models/Ministry";
-import GalleryImageModel from "../models/GalleryImage";
 
 async function seed() {
   const { DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME } = process.env;
@@ -40,46 +37,9 @@ async function seed() {
     { upsert: true }
   );
 
-  console.log("Seeding sermons...");
-  await SermonModel.deleteMany({});
-  await SermonModel.insertMany(sermons);
-
-  console.log("Seeding events...");
-  await EventModel.deleteMany({});
-  await EventModel.insertMany(events);
-
-  console.log("Seeding blog posts...");
-  await BlogPostModel.deleteMany({});
-  await BlogPostModel.insertMany(blogPosts);
-
-  console.log("Seeding leadership...");
-  await LeaderModel.deleteMany({});
-  await LeaderModel.insertMany(
-    leadership.map((l, i) => ({
-      name: l.name,
-      position: l.position,
-      bio: l.bio,
-      responsibilities: l.responsibilities,
-      order: i,
-    }))
-  );
-
-  console.log("Seeding ministries...");
-  await MinistryModel.deleteMany({});
-  await MinistryModel.insertMany(ministries.map((m, i) => ({ ...m, order: i })));
-
-  console.log("Seeding gallery (marquee) images...");
-  await GalleryImageModel.deleteMany({});
-  await GalleryImageModel.insertMany(galleryImages);
-
   console.log("\nDone.");
   console.log(`  Admin login: ${ADMIN_EMAIL}`);
-  console.log(`  Sermons: ${sermons.length}`);
-  console.log(`  Events: ${events.length}`);
-  console.log(`  Blog posts: ${blogPosts.length}`);
-  console.log(`  Leaders: ${leadership.length}`);
-  console.log(`  Ministries: ${ministries.length}`);
-  console.log(`  Gallery images: ${galleryImages.length}`);
+  console.log("  Site content is managed in the admin portal (not seeded).");
 
   await mongoose.disconnect();
 }
