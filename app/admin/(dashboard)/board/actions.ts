@@ -20,7 +20,7 @@ function readBoardMember(formData: FormData) {
 export async function createBoardMember(formData: FormData) {
   await requirePermission("Board.Manage");
   await dbConnect();
-  const photo = await uploadImage(formData.get("photo"), "ncci/board");
+  const photo = await uploadImage(formData.get("photo"), "pbkc/board");
   await BoardMemberModel.create({ ...readBoardMember(formData), photo });
   revalidatePath("/admin/board");
   revalidatePath("/about");
@@ -32,7 +32,7 @@ export async function updateBoardMember(id: string, formData: FormData) {
   await dbConnect();
   const update: Record<string, unknown> = readBoardMember(formData);
 
-  const photo = await uploadImage(formData.get("photo"), "ncci/board");
+  const photo = await uploadImage(formData.get("photo"), "pbkc/board");
   if (photo) {
     update.photo = photo; // new upload replaces the old one
   } else if (formData.get("removePhoto") === "on") {

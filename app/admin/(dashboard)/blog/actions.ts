@@ -29,7 +29,7 @@ function readPost(formData: FormData) {
 export async function createBlogPost(formData: FormData) {
   await requirePermission("Blog.Create");
   await dbConnect();
-  const coverImage = await uploadImage(formData.get("coverImage"), "ncci/blog");
+  const coverImage = await uploadImage(formData.get("coverImage"), "pbkc/blog");
   await BlogPostModel.create({ ...readPost(formData), coverImage: coverImage || "" });
   revalidatePath("/admin/blog");
   revalidatePath("/blog");
@@ -41,7 +41,7 @@ export async function updateBlogPost(id: string, formData: FormData) {
   await dbConnect();
   const update: Record<string, unknown> = readPost(formData);
 
-  const coverImage = await uploadImage(formData.get("coverImage"), "ncci/blog");
+  const coverImage = await uploadImage(formData.get("coverImage"), "pbkc/blog");
   if (coverImage) {
     update.coverImage = coverImage; // new upload replaces the old one
   } else if (formData.get("removeCoverImage") === "on") {

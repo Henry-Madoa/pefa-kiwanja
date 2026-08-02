@@ -66,7 +66,7 @@ export default async function FeaturedGrid() {
     },
     {
       href: "/pastor",
-      title: "Pastor's Welcome",
+      title: "Bishop's Welcome",
       text: `A personal word from ${pastor.name} to every visitor and member`,
       tag: "Watch Message",
       icon: (
@@ -83,7 +83,7 @@ export default async function FeaturedGrid() {
       <div className="container-page">
         <div className="section-head">
           <span className="eyebrow block mb-3">This Week</span>
-          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)]">Featured at NCCI</h2>
+          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)]">Featured at PBKC</h2>
           <p className="text-ink-soft mt-3.5">
             Catch up on the latest word, what&apos;s happening next, and where our hearts are
             this season.

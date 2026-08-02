@@ -11,7 +11,7 @@ export async function uploadGalleryImage(formData: FormData) {
   await requirePermission("Media.Manage");
   await dbConnect();
 
-  const url = await uploadImage(formData.get("image"), "ncci/gallery");
+  const url = await uploadImage(formData.get("image"), "pbkc/gallery");
   if (!url) {
     throw new Error("Please choose an image to upload.");
   }
@@ -35,7 +35,7 @@ export async function updateGalleryImage(id: string, formData: FormData) {
     order: Number(formData.get("order") || 0),
   };
   // Optional replacement image.
-  const url = await uploadImage(formData.get("image"), "ncci/gallery");
+  const url = await uploadImage(formData.get("image"), "pbkc/gallery");
   if (url) update.url = url;
 
   await GalleryImageModel.findByIdAndUpdate(id, update);

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import RsvpForm from "@/components/RsvpForm";
-import { formatDate } from "@/lib/data";
+import { formatDate, churchInfo } from "@/lib/data";
 import { pageImages } from "@/lib/images";
 import { dbConnect } from "@/lib/mongodb";
 import { serialize } from "@/lib/serialize";
@@ -26,7 +26,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const event = await getEvent(params.slug);
-  return { title: event ? `${event.title} | NCCI Events` : "Event | NCCI" };
+  return {
+    title: event
+      ? `${event.title} | PEFA Branch Kiwanja Cathedral`
+      : "Event | PEFA Branch Kiwanja Cathedral",
+  };
 }
 
 export default async function EventDetailPage({ params }: { params: { slug: string } }) {
@@ -34,6 +38,8 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
   if (!event) return notFound();
 
   const spotsLeft = event.capacity - event.registered;
+  // Compare on date only so an event earlier today still counts as upcoming.
+  const isPast = new Date(event.date) < new Date(new Date().toDateString());
 
   return (
     <>
@@ -65,7 +71,7 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
                 <dd className="text-ink">{event.organizer}</dd>
               </div>
             </dl>
-            {event.capacity > 0 && (
+            {!isPast && event.capacity > 0 && (
               <p className="text-[0.9rem] text-ink-soft">
                 {spotsLeft > 0
                   ? `${spotsLeft} of ${event.capacity} spots remaining.`
@@ -73,10 +79,28 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
               </p>
             )}
           </div>
-          <aside className="bg-cream-dim rounded-lg p-7 h-fit">
-            <h3 className="text-[1rem] mb-4">Register / RSVP</h3>
-            <RsvpForm eventSlug={event.slug} eventTitle={event.title} />
-          </aside>
+          {isPast ? (
+            <aside className="bg-cream-dim rounded-lg p-7 h-fit">
+              <h3 className="text-[1rem] mb-3">This event has already taken place</h3>
+              <p className="text-[0.9rem] text-ink-soft mb-5">
+                Catch the message and worship from this and other services on our broadcast
+                channel, PEFA Kiwanja TV.
+              </p>
+              <a
+                href={churchInfo.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary w-full justify-center"
+              >
+                Watch on PEFA Kiwanja TV
+              </a>
+            </aside>
+          ) : (
+            <aside className="bg-cream-dim rounded-lg p-7 h-fit">
+              <h3 className="text-[1rem] mb-4">Register / RSVP</h3>
+              <RsvpForm eventSlug={event.slug} eventTitle={event.title} />
+            </aside>
+          )}
         </div>
       </section>
     </>

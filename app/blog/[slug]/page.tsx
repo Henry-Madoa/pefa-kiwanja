@@ -40,7 +40,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const post = await getBlogPost(params.slug);
-  return { title: post ? `${post.title} | NCCI Blog` : "Blog | NCCI" };
+  return {
+    title: post
+      ? `${post.title} | PBKC Blog`
+      : "Blog | PEFA Branch Kiwanja Cathedral",
+  };
 }
 
 export default async function BlogDetailPage({ params }: { params: { slug: string } }) {

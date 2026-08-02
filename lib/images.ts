@@ -12,6 +12,7 @@ export const pageImages = {
   hero: unsplash("photo-1507692049790-de58290a4334"),
   about: unsplash("photo-1511527661048-7fe73d85e9a4"),
   pastor: unsplash("photo-1520642413789-2bd6770d59e3"),
+  bishop: unsplash("photo-1520642413789-2bd6770d59e3"),
   leadership: unsplash("photo-1600880292089-90a7e086ee0c"),
   ministries: unsplash("photo-1544928938-6852c1925194"),
   sermons: unsplash("photo-1509021436665-8f07dbf5bf1d"),

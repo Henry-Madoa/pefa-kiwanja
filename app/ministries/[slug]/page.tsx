@@ -26,7 +26,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const ministry = await getMinistry(params.slug);
-  return { title: ministry ? `${ministry.name} | NCCI` : "Ministry | NCCI" };
+  return {
+    title: ministry
+      ? `${ministry.name} | PBKC`
+      : "Ministry | PEFA Branch Kiwanja Cathedral",
+  };
 }
 
 export default async function MinistryDetailPage({ params }: { params: { slug: string } }) {

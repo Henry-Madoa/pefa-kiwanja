@@ -5,8 +5,8 @@ import GalleryGrid from "@/components/GalleryGrid";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | NCCI",
-  description: "Browse photos from services, conferences, weddings, and community events at NCCI.",
+  title: "Photo Gallery | PEFA Branch Kiwanja Cathedral",
+  description: "Browse photos from services, conferences, weddings, and community events at PEFA Branch Kiwanja Cathedral.",
 };
 
 const albumGradients = [

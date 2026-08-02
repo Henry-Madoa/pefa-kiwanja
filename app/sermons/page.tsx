@@ -11,8 +11,8 @@ import { getReviewStats } from "@/lib/reviews";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Sermons | NCCI",
-  description: "Watch and listen to recent sermons from Nahum Christian Church International.",
+  title: "Sermons | PEFA Branch Kiwanja Cathedral",
+  description: "Watch and listen to recent sermons from PEFA Branch Kiwanja Cathedral.",
 };
 
 async function getSermons(): Promise<Sermon[]> {

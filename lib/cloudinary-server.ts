@@ -20,7 +20,7 @@ const MAX_BYTES = 2 * 1024 * 1024; // 2 MB
 // leave an existing photo untouched.
 export async function uploadImage(
   entry: FormDataEntryValue | null,
-  folder = "ncci"
+  folder = "pefa-kiwanja"
 ): Promise<string | undefined> {
   if (!entry || typeof entry === "string") return undefined;
   const file = entry as File;

@@ -10,8 +10,8 @@ import MinistryModel from "@/models/Ministry";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Ministries | NCCI",
-  description: "Explore the ministries at Nahum Christian Church International.",
+  title: "Ministries | PEFA Branch Kiwanja Cathedral",
+  description: "Explore the ministries at PEFA Branch Kiwanja Cathedral.",
 };
 
 async function getMinistries(): Promise<Ministry[]> {

@@ -12,7 +12,7 @@ export default function Sidebar({ permissions }: { permissions: string[] }) {
     <aside className="w-[240px] shrink-0 bg-wine-deeper text-cream min-h-screen hidden md:flex flex-col">
       <div className="px-6 py-6 border-b border-cream/10">
         <div className="font-display font-semibold text-cream text-[1.05rem] leading-tight">
-          NCCI
+          PBKC
           <span className="block font-sans text-[0.62rem] font-semibold tracking-[0.16em] text-gold uppercase">
             Admin Portal
           </span>

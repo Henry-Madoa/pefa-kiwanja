@@ -40,7 +40,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const sermon = await getSermon(params.slug);
-  return { title: sermon ? `${sermon.title} | NCCI Sermons` : "Sermon | NCCI" };
+  return {
+    title: sermon
+      ? `${sermon.title} | PBKC Sermons`
+      : "Sermon | PEFA Branch Kiwanja Cathedral",
+  };
 }
 
 export default async function SermonDetailPage({ params }: { params: { slug: string } }) {

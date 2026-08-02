@@ -10,14 +10,14 @@ import EventModel from "@/models/Event";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Events | NCCI",
-  description: "Upcoming events and gatherings at Nahum Christian Church International.",
+  title: "Events | PEFA Branch Kiwanja Cathedral",
+  description: "Services, Bible studies, and gatherings at PEFA Branch Kiwanja Cathedral this year.",
 };
 
 async function getEvents(): Promise<ChurchEvent[]> {
   try {
     await dbConnect();
-    const events = await EventModel.find().sort({ date: 1 }).lean();
+    const events = await EventModel.find().sort({ date: -1 }).lean();
     return serialize(events) as unknown as ChurchEvent[];
   } catch {
     return [];
@@ -31,8 +31,8 @@ export default async function EventsPage() {
     <>
       <PageHero
         eyebrow="Calendar"
-        title="Upcoming Events"
-        description="From citywide conferences to small prayer gatherings, there's always something happening at NCCI."
+        title="Events"
+        description="Services, worship experiences, and Bible studies from across the year — with more always on the way at the Cathedral."
         image={pageImages.events}
       />
       <section className="section">

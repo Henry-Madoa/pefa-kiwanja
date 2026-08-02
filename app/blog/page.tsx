@@ -12,8 +12,8 @@ import TileReviewStats from "@/components/TileReviewStats";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog & News | NCCI",
-  description: "News, devotionals, testimonies, and updates from Nahum Christian Church International.",
+  title: "Blog & News | PEFA Branch Kiwanja Cathedral",
+  description: "News, devotionals, testimonies, and updates from PEFA Branch Kiwanja Cathedral.",
 };
 
 async function getBlogPosts(): Promise<BlogPost[]> {

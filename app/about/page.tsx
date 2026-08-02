@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import { aboutContent, churchInfo } from "@/lib/data";
+import Link from "next/link";
+import { aboutContent, churchInfo, pastor } from "@/lib/data";
 import { pageImages } from "@/lib/images";
 import { dbConnect } from "@/lib/mongodb";
 import { serialize } from "@/lib/serialize";
@@ -57,6 +58,43 @@ export default async function AboutPage() {
             <div>
               <span className="eyebrow block mb-2">Mission</span>
               <p className="text-ink-soft leading-relaxed">{aboutContent.mission}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container-page">
+          <div className="section-head">
+            <span className="eyebrow block mb-3">Our Shepherd</span>
+            <h2 className="text-[clamp(1.8rem,3vw,2.4rem)]">Meet Our Bishop</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-10 items-start max-w-[980px] mx-auto">
+            <div className="rounded-lg border border-[color:var(--line)] bg-white overflow-hidden">
+              {pastor.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={pastor.photo}
+                  alt={pastor.photoAlt || pastor.name}
+                  className="w-full h-auto object-contain"
+                />
+              ) : (
+                <div className="aspect-[3/2] bg-wine-deeper flex items-center justify-center">
+                  <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="#E4C874" strokeWidth="1.2">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21v-1a8 8 0 0116 0v1" />
+                  </svg>
+                </div>
+              )}
+            </div>
+            <div>
+              <h3 className="text-[1.5rem] mb-1">{pastor.name}</h3>
+              <p className="eyebrow mb-5">{pastor.title}</p>
+              <p className="text-ink-soft leading-relaxed mb-5">{pastor.bio}</p>
+              <p className="text-ink-soft leading-relaxed mb-7">{pastor.visionForChurch}</p>
+              <Link href="/pastor" className="btn btn-primary">
+                Read the Bishop&rsquo;s Full Profile
+              </Link>
             </div>
           </div>
         </div>
@@ -186,6 +224,11 @@ export default async function AboutPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href="/board" className="btn btn-outline">
+                View the Board of Directors
+              </Link>
             </div>
           </div>
         </section>

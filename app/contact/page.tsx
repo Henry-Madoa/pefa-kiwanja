@@ -5,8 +5,8 @@ import { churchInfo } from "@/lib/data";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Contact Us | NCCI",
-  description: "Get in touch with Nahum Christian Church International.",
+  title: "Contact Us | PEFA Branch Kiwanja Cathedral",
+  description: "Get in touch with PEFA Branch Kiwanja Cathedral.",
 };
 
 export default function ContactPage() {

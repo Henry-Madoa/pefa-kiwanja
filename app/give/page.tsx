@@ -4,8 +4,8 @@ import GivingForm from "@/components/GivingForm";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Give Online | NCCI",
-  description: "Give tithes, offerings, and gifts to Nahum Christian Church International securely online.",
+  title: "Give Online | PEFA Branch Kiwanja Cathedral",
+  description: "Give tithes, offerings, and gifts to PEFA Branch Kiwanja Cathedral securely online.",
 };
 
 export default function GivePage() {

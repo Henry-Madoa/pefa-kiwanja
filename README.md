@@ -1,4 +1,4 @@
-# Nahum Christian Church International — Website
+# PEFA Branch Kiwanja Cathedral (PBKC) — Website
 
 A Next.js 14 (App Router) + TypeScript + Tailwind CSS implementation of the church
 website, built from `Church_Website_Requirements_Specification.docx` and the

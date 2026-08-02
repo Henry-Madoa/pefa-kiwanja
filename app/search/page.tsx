@@ -11,8 +11,8 @@ import LeaderModel from "@/models/Leader";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Search | NCCI",
-  description: "Search across sermons, events, blog posts, ministries, and leadership at NCCI.",
+  title: "Search | PEFA Branch Kiwanja Cathedral",
+  description: "Search across sermons, events, blog posts, ministries, and leadership at PEFA Branch Kiwanja Cathedral.",
 };
 
 async function getSearchableContent() {

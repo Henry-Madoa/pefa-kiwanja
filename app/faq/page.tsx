@@ -4,8 +4,8 @@ import FaqAccordion from "@/components/FaqAccordion";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "FAQs | NCCI",
-  description: "Frequently asked questions about NCCI.",
+  title: "FAQs | PEFA Branch Kiwanja Cathedral",
+  description: "Frequently asked questions about PEFA Branch Kiwanja Cathedral.",
 };
 
 export default function FaqPage() {

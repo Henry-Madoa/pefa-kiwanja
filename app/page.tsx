@@ -3,6 +3,7 @@ import InfoStrip from "@/components/InfoStrip";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import StatsBand from "@/components/StatsBand";
 import Mission from "@/components/Mission";
+import BishopSpotlight from "@/components/BishopSpotlight";
 import Marquee from "@/components/Marquee";
 import UpdatesGrid from "@/components/UpdatesGrid";
 import CtaBand from "@/components/CtaBand";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <FeaturedGrid />
       <StatsBand />
       <Mission />
+      <BishopSpotlight />
       <Marquee />
       <UpdatesGrid />
       <CtaBand />

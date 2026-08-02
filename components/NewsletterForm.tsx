@@ -13,7 +13,7 @@ export default function NewsletterForm() {
       <div className="bg-forest text-cream rounded-lg p-8 text-center">
         <p className="font-display text-[1.2rem] mb-2">You&apos;re subscribed!</p>
         <p className="text-cream/70 text-[0.9rem]">
-          Watch your inbox for updates from NCCI.
+          Watch your inbox for updates from PBKC.
         </p>
       </div>
     );

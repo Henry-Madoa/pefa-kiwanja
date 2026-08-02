@@ -20,7 +20,7 @@ function readLeader(formData: FormData) {
 export async function createLeader(formData: FormData) {
   await requirePermission("Leadership.Manage");
   await dbConnect();
-  const photo = await uploadImage(formData.get("photo"), "ncci/leadership");
+  const photo = await uploadImage(formData.get("photo"), "pbkc/leadership");
   await LeaderModel.create({ ...readLeader(formData), photo });
   revalidatePath("/admin/leadership");
   revalidatePath("/leadership");
@@ -32,7 +32,7 @@ export async function updateLeader(id: string, formData: FormData) {
   await dbConnect();
   const update: Record<string, unknown> = readLeader(formData);
 
-  const photo = await uploadImage(formData.get("photo"), "ncci/leadership");
+  const photo = await uploadImage(formData.get("photo"), "pbkc/leadership");
   if (photo) {
     update.photo = photo; // new upload replaces the old one
   } else if (formData.get("removePhoto") === "on") {

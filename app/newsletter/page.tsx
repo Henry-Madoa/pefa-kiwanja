@@ -4,8 +4,8 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Newsletter | NCCI",
-  description: "Subscribe to the NCCI newsletter for updates and announcements.",
+  title: "Newsletter | PEFA Branch Kiwanja Cathedral",
+  description: "Subscribe to the PEFA Branch Kiwanja Cathedral newsletter for updates and announcements.",
 };
 
 export default function NewsletterPage() {

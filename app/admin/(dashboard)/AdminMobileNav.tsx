@@ -40,7 +40,7 @@ export default function AdminMobileNav({ permissions }: { permissions: string[] 
           >
             <div className="flex items-center justify-between px-6 py-6 border-b border-cream/10">
               <div className="font-display font-semibold text-cream text-[1.05rem] leading-tight">
-                NCCI
+                PBKC
                 <span className="block font-sans text-[0.62rem] font-semibold tracking-[0.16em] text-gold uppercase">
                   Admin Portal
                 </span>

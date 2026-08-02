@@ -36,6 +36,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-sans text-[0.86rem]">
               <li><Link href="/about" className="hover:text-gold-bright">About Us</Link></li>
+              <li><Link href="/pastor" className="hover:text-gold-bright">Bishop&rsquo;s Profile</Link></li>
+              <li><Link href="/board" className="hover:text-gold-bright">Board</Link></li>
               <li><Link href="/leadership" className="hover:text-gold-bright">Leadership</Link></li>
               <li><Link href="/ministries" className="hover:text-gold-bright">Ministries</Link></li>
               <li><Link href="/sermons" className="hover:text-gold-bright">Sermons</Link></li>

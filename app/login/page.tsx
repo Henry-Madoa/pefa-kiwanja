@@ -8,8 +8,8 @@ import { authOptions } from "@/lib/auth";
 import LoginForm from "./LoginForm";
 
 export const metadata: Metadata = {
-  title: "Login | NCCI",
-  description: "Sign in to your Nahum Christian Church International account.",
+  title: "Login | PEFA Branch Kiwanja Cathedral",
+  description: "Sign in to your PEFA Branch Kiwanja Cathedral account.",
 };
 
 export default async function LoginPage() {

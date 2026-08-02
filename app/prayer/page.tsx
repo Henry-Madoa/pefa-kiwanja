@@ -4,8 +4,8 @@ import PrayerRequestForm from "@/components/PrayerRequestForm";
 import { pageImages } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Prayer Requests | NCCI",
-  description: "Submit a prayer request to the NCCI prayer team.",
+  title: "Prayer Requests | PEFA Branch Kiwanja Cathedral",
+  description: "Submit a prayer request to the PEFA Branch Kiwanja Cathedral prayer team.",
 };
 
 export default function PrayerPage() {
