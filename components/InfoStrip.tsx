@@ -49,16 +49,19 @@ export default function InfoStrip() {
         {items.map((item, i) => (
           <div
             key={item.label}
-            className={`py-6 px-2 sm:px-7 flex gap-3.5 items-start ${
+            // min-w-0 lets the grid track shrink below its content's intrinsic
+            // width; without it long values (the email) force the grid wider
+            // than the page and cause horizontal overflow.
+            className={`py-6 px-2 sm:px-7 flex gap-3.5 items-start min-w-0 ${
               i !== items.length - 1 ? "lg:border-r lg:border-gold-bright/25" : ""
             }`}
           >
             <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
-            <div>
+            <div className="min-w-0">
               <div className="font-sans text-[0.68rem] font-semibold tracking-[0.1em] uppercase text-gold-bright mb-0.5">
                 {item.label}
               </div>
-              <div className="font-sans text-[0.92rem] font-medium">{item.value}</div>
+              <div className="font-sans text-[0.92rem] font-medium break-words">{item.value}</div>
             </div>
           </div>
         ))}
